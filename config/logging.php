@@ -36,7 +36,7 @@ return [
     'channels' => [
         'stack' => [
             'driver' => 'stack',
-            'channels' => ['daily'],
+            'channels' => ['heroku'],
         ],
 
         'single' => [
@@ -50,6 +50,11 @@ return [
             'path' => storage_path('logs/laravel.log'),
             'level' => 'debug',
             'days' => 14,
+        ],
+
+        'heroku' => [
+            'driver' => 'errorlog',
+            'level' => 'debug',
         ],
 
         'slack' => [
